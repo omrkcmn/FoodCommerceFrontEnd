@@ -1,0 +1,58 @@
+<div class="content">
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Restoran Güncelle</h5>
+            </div>
+            <div class="car-body">
+                <form [formGroup]="restUpdateForm" *ngFor="let rests of rest">
+                    <div class="mb-3">
+                        <label for="foodName">Restoran Kodu</label>
+                        <div class="form-group">
+                            <input type="number" id="ID" formControlName="ID" class="form-control"
+                            placeholder="{{rests.id}}" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="foodName">Restoran Adı</label>
+                        <div class="form-group">
+                            <input type="text" id="restoranAdi" formControlName="restoranAdi" class="form-control"
+                            placeholder="{{rests.restoranAdi}}" />
+                        </div>
+                    </div>
+                    <div class="mb-3"> <label for="restName">Adres</label>
+                        <div class="form-group"><input type="text" id="restoranAdresi" formControlName="restoranAdresi"
+                                class="form-control"autocomplete="off"  placeholder="{{rests.restoranAdresi}}" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="restCode">İl</label>
+                        <div class="form-group"><input type="text" id="il" formControlName="il"
+                                class="form-control" placeholder="{{rests.il}}" />
+                        </div>
+                    </div>
+                    <div class="mb-3"><label for="foodPrice">İlçe</label>
+                        <div class="form-group">
+                            <input type="text" id="ilce" formControlName="ilce"
+                                class="form-control" placeholder="{{rests.ilce}}" >
+                        </div>
+                    </div>
+
+                    <div class="mb-3"><label for="foodPrice">Mahalle</label>
+                        <div class="form-group">
+                            <input type="text" id="mahalle" formControlName="mahalle"
+                                class="form-control" placeholder="{{rests.mahalle}}" >
+                        </div>
+                    </div>
+                </form>
+            </div>
+                    
+
+                
+            <div class="card-footer">
+                    <button class="btn btn-fill btn-primary" (click)="update()">Güncelle</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<button class="btn btn-primary" (click)="refresh()">Yenile</button>
+<br>
+<table class="table table-striped" id="table">
+
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Yemek Adı</th>
+      <th scope="col">Adet</th>
+      <th scope="col">Adres</th>
+      <th scope="col">İl</th>
+      <th scope="col">İlçe</th>
+      <th scope="col">Müşteri</th>
+      <th>Durum</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <th scope="row">{{order.kullaniciID}}</th>
+      <td>{{order.yemekAdi}}</td>
+      <td>{{order.miktar}}</td>
+      <td>{{order.adres}}</td>
+      <td>{{order.il}}</td>
+      <td>{{order.ilce}}</td>
+      <td>{{order.kullaniciAdi}} {{order.kullaniciSoyadi}}</td>
+      <td>{{order.siparisDurum}}</td>
+      <td><button type="button" [class]="btnClass()" (click)="orderSend(order)">
+        Yola Çıktı
+      </button>
+      &nbsp;<br><br>
+        <button type="button" class="btn btn-success" (click)="orderComplete(order)">
+          Tamamla
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

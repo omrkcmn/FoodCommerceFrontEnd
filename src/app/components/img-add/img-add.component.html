@@ -1,0 +1,42 @@
+<table class="table ">
+    <thead class="table-light">
+        <tr>
+            <th scope="col">Yemek Kodu</th> 
+            <th scope="col">Yemek Adı</th>  
+             
+            
+            <th>Resim Yükle</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">{{yemekID}}</th>
+            <td >{{yemekAdi}}</td>
+           
+           
+         
+          <td ><div class="col-3" >
+            <div class="mb-3" >
+            
+            <input
+            type="file"
+            class="custom-file-input"
+            id="imageFile"
+            (change)="fileSelected($event)"
+            accept=".png,.jpg,.jpeg"          
+          />
+          <label style="width: 400px;" class="custom-file-label" for="imageFile">Dosya Seç</label>
+        </div>
+      </div>
+  
+  
+          </td >
+            <td style="width: 120px; ">
+              <button  style="width: 130px; margin-right: 8px;"class="btn btn-info" (click)="add()"><b>Yükle</b></button>
+            </td>
+  
+        </tr>
+    </tbody>
+  
+  </table>

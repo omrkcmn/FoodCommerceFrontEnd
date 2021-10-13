@@ -1,0 +1,100 @@
+<!--<div class="cart_section" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 offset-lg-1">
+                    <div class="cart_container">
+                        <div class="cart_title">Sepetiniz<small>  </small></div>
+                        <div class="cart_items">
+                            <ul class="cart_list">
+                                <li class="cart_item clearfix" *ngFor="let food of foods; let i = 'index'">
+                                    <div class="cart_item_image"><img src="https://localhost:44307/{{food.yemekResim}}" alt=""></div>
+                                    <div class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                                        <div class="cart_item_name cart_info_col">
+                                            <div class="cart_item_title">Ürün</div>
+                                            <div class="cart_item_text">{{food.yemekAdi}}</div>
+                                        </div>
+                                        <div class="cart_item_color cart_info_col">
+                                            <div class="cart_item_title">Restoran</div>
+                                            <div class="cart_item_text">{{food.restoranAdi}}</div>
+                                        </div>
+                                        <div class="cart_item_quantity cart_info_col">
+                                            <div class="cart_item_title">Adet</div>
+                                            <div class="cart_item_text"><input type="number" min="1" [(ngModel)]="foods[i].miktar" value={{food.miktar}} size="2" ><br><br></div>
+                                        </div>                                  
+                                        <div class="cart_item_price cart_info_col">
+                                            <div class="cart_item_title">Fiyat</div>
+                                            <div class="cart_item_text">{{food.fiyat}}₺</div>
+                                        </div>                                     
+                                        <div class="cart_item_total cart_info_col">
+                                            <div class="cart_item_title">Ürün</div>
+                                            <br>
+                                            <span (click)="deleteCartItem(food)" class="btn btn-danger">Ürünü Sil </span>
+                                            &nbsp;
+                                            <span (click)="updateCartItem(food)" class="btn btn-success">Miktarı Güncelle </span>
+                                        </div>                                  
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="order_total">
+                            <div class="order_total_content text-md-right">
+                                <div class="order_total_title">Sipariş Tutarı:</div>
+                                <div class="order_total_amount">{{toplam}}₺</div>
+                            </div>
+                        </div>
+                        <div class="cart_buttons"> <button type="button" class="button cart_button_clear" routerLink="/food">Alışverişe Devam Et</button> 
+                            <button type="button" class="button cart_button_checkout" (click)="addOrder()">Siparişi Tamamla</button> </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+<div class="cart_section" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 offset-lg-1">
+                    <div class="cart_container">
+                        <div class="cart_title">Sepetiniz<small>  </small></div>
+                        <br><br>
+                                <table class="table table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">Resim</th>
+                                        <th scope="col">Yemek</th>
+                                        <th scope="col">Restoran</th>
+                                        <th scope="col">Miktar</th>
+                                        <th scope="col">Fiyat</th>
+                                        <th>Sil</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr *ngFor="let food of foods; let i = index">
+                                        <th scope="row"><div class="cart_item_image"><img src="https://localhost:5001/{{food.yemekResim}}"></div></th>
+                                        <td>{{food.yemekAdi}}</td> 
+                                        <td>{{food.restoranAdi}}</td>
+                                            
+                                        <td style="padding-left:5px;padding-bottom:3px;"><input type="number" min="1" [(ngModel)]="foods[i].miktar" (input)="updateCartItem(food)" 
+                                            value={{food.miktar}} size="2px" ><br><br>    
+                                            </td>
+
+                                        <td style="padding-left:5px;padding-bottom:3px;"> <strong style="font-size:18px;">{{food.fiyat}}₺</strong></td>
+                                        <td><button class="btn btn-danger" (click)="deleteCartItem(food)">Sil</button></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  <div class="order_total">
+                                    <div class="order_total_content text-md-right">
+                                        <div class="order_total_title">Sipariş Tutarı:</div>
+                                        <div class="order_total_amount">{{toplam}}₺</div>
+                                    </div>
+                                </div>
+                                <div class="cart_buttons"> <button type="button" class="button cart_button_clear" routerLink="/food">Alışverişe Devam Et</button> 
+                                    <button type="button" class="button cart_button_checkout" (click)="addOrder()">Siparişi Tamamla</button> </div>
+                           
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            

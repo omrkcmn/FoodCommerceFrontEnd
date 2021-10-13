@@ -1,0 +1,31 @@
+<div class="container">
+  <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel" data-interval="2000">
+    <div class="carousel-inner">
+      <div *ngFor="let image of images; let i = index; first as isFirst" [ngClass]="isFirst ? 'carousel-item active' : 'carousel-item' " data-interval="10000">
+        <img src="https://localhost:5001/{{ image.resimPath }}" width="90" height="690" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Sonraki</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Önceki</span>
+    </a>
+</div>
+
+<div *ngFor="let food of foods" class="card text-center">
+  <div class="card-header">
+    <h1>{{food.yemekAdi}}</h1>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{food.fiyat}} ₺</h5>
+    <p class="card-text">{{food.aciklama}}</p>
+    <b>Restoran: </b><a routerLink="/rest/comments/{{food.restoranID}}">{{food.restoranAdi}}</a>
+    <br><br><br>
+    <button (click)="addToCart(food)" type="button" class="btn btn-danger">Sepete Ekle</button>
+  </div>
+</div>
+
+</div>

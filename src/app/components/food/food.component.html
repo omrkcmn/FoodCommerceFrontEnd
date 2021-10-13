@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-md-2">
+    <app-rest-list></app-rest-list> 
+  </div>
+  <div class="col-md-10">
+    <section class="header-main border-bottom bg-white">
+      <div class="container-fluid" style="width: 45rem;">
+          <div class="row p-2 pt-3 pb-3 d-flex align-items-center">
+              <div class="col-md-11">
+                  <div class="d-flex form-inputs"> <input class="form-control" type="text" 
+                    [(ngModel)]="filterText" id="filterText" placeholder="Yemek Ara">
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+    <br/>
+    <div class="row">
+        <div class="card" style="width: 19rem;" *ngFor="let food of foods | filterControl:filterText  | paginate: {
+        itemsPerPage: 7,
+        currentPage: p}">
+          <img class="card-img-top" src="https://localhost:5001/{{getCarImage(food)}}" width="286px" height="190px" (click)="setCurrentCar(food)"
+            routerLink="/food/getFoodsByFoodId/{{food.yemekID}}">
+          <div class="card-block" [class]="getCurrentCarClass(food)">
+            <h4 class="card-title">{{food.yemekAdi}}</h4>
+            <p class="card-text"><b>Restoran: </b> <a routerLink="/rest/comments/{{food.restoranID}}">{{food.restoranAdi}}</a> </p>
+            
+            <p class="card-text">Fiyat: {{food.fiyat}}₺ </p>
+            <a href="#" class="btn btn-primary"
+              routerLink="/food/getFoodsByFoodId/{{food.yemekID}}">İncele</a>
+            &nbsp;
+            <button (click)="addToCart(food)" type="button" class="btn btn-warning">Sepete Ekle</button>
+          </div>
+        </div>
+        
+        &nbsp;
+    </div>
+    &nbsp;
+    <br>  
+
+    <div class="Container align-items-center">
+      <pagination-controls previousLabel="Önceki"
+      nextLabel="Sonraki"
+      (pageChange)="p = $event"></pagination-controls>
+    </div>
+  
+  </div>
+
+ 
+      
+  
+  
+  
+</div>

@@ -1,0 +1,46 @@
+<div class="content">
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">{{foodName}} Yemeğini Sileceksiniz</h5>
+            </div>
+            <div class="car-body">
+                <form [formGroup]="FoodDeleteForm">
+                    <div class="mb-3">
+                        <label for="foodName">Yemek Kodu</label>
+                        <div class="form-group">
+                            <input type="number" id="ID" formControlName="ID" class="form-control"
+                                [(ngModel)]="foodID" readonly/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                    Sil
+                </button>
+                <!--MODAL-->
+                <div class="modal" tabindex="-1" role="dialog" id="exampleModal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Silinecek!</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p> {{foodName}} Silinecek!</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="delete()">Sil</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Vazgeç</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

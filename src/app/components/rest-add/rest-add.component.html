@@ -1,0 +1,56 @@
+<div class="content">
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Restoran Ekle</h5>
+            </div>
+            <div class="car-body">
+                <form [formGroup]="restAddForm">
+                    <div class="mb-3">
+                        <label for="foodName">Restoran Adı</label>
+                        <div class="form-group">
+                            <input type="text" id="restName" formControlName="restoranAdi" class="form-control"
+                                placeholder="Restoran Adı" />
+                        </div>
+                    </div>
+                    <div class="mb-3"> <label for="restAddres">Adres</label>
+                        <div class="form-group"><input type="text" id="restoranAdresi" formControlName="restoranAdresi"
+                                class="form-control" placeholder="Açık Adres" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="restCode">İl</label>
+                        <div class="form-group"><input type="il" id="il" formControlName="il"
+                                class="form-control" placeholder="İl Adı" />
+                        </div>
+                    </div>
+                    <div class="mb-3"><label for="foodPrice">İlçe</label>
+                        <div class="form-group"><input type="text" id="ilce" formControlName="ilce"
+                                class="form-control" placeholder="İlçe Adı" />
+                        </div>
+                    </div>
+
+                    <div class="mb-3"><label for="foodPrice">Mahalle</label>
+                        <div class="form-group"><input type="text" id="mahalle" formControlName="mahalle"
+                                class="form-control" placeholder="Mahalle İsmi" />
+                        </div>
+                    </div>
+                    <!--
+                    <div class="mb-3"><label for="foodImage">Yemek Resmi</label>
+                        <div class="form-group"><input type="file" id="foodImage" formControlName="yemekResim"
+                                class="form-control" placeholder="Yemek Resmi" />
+                        </div>
+                    </div>
+                -->
+                </form>
+            </div>
+                    
+
+                
+            <div class="card-footer">
+                    <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+            </div>
+        </div>
+    </div>
+</div>

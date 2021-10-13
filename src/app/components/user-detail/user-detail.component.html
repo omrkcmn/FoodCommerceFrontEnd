@@ -1,0 +1,123 @@
+<div class="content">
+
+    
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Kullanıcı Bilgileri</h5>
+            </div>
+            <div class="car-body">
+                <form [formGroup]="UserForm" *ngFor="let user of user">
+                    <div class="mb-3">
+                        <div class="form-group">
+                             <input type="hidden" id="id" formControlName="id" 
+                                    class="form-control" [(ngModel)]="user.id" />
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="kullaniciAdi">Kullanıcı Adı</label>
+                        <div class="form-group">
+                             <input type="text" id="kullaniciAdi" formControlName="kullaniciAdi" 
+                                    class="form-control" [(ngModel)]="user.kullaniciAdi" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="kullaniciSoyadi">Kullanıcı Soyadı</label>
+                        <div class="form-group">
+                            <input type="text" id="kullaniciSoyadi" formControlName="kullaniciSoyadi" 
+                            class="form-control" [(ngModel)]="user.kullaniciSoyadi" />
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="adres">Kullanıcı Adres</label>
+                        <div class="form-group">
+                            <input type="text" id="adres" formControlName="adres" class="form-control"
+                            [(ngModel)]="user.adres" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="il">Kullanıcı İl</label>
+                        <div class="form-group">
+                            <input type="text" id="il" formControlName="il" class="form-control"
+                            [(ngModel)]="user.il" />
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="ilce">İlçe</label>
+                        <div class="form-group">
+                            <input type="text" id="ilce" formControlName="ilce" class="form-control"
+                            [(ngModel)]="user.ilce" />
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="telefon">Kullanıcı Telefon</label>
+                        <div class="form-group">
+                            <input type="phone" id="telefon" formControlName="telefon" class="form-control"
+                            [(ngModel)]="user.telefon" />
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email">Kullanıcı Mail</label>
+                        <div class="form-group">
+                            <input type="email" id="email" formControlName="email" class="form-control"
+                            [(ngModel)]="user.email" />
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <div class="form-group">
+                            <input type="hidden" id="passwordSalt" formControlName="passwordSalt" 
+                            class="form-control" [(ngModel)]="user.passwordSalt"/>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="form-group">
+                            <input type="hidden" id="passwordHash" formControlName="passwordHash" 
+                            class="form-control" [(ngModel)]="user.passwordHash" />
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="card-footer" *ngFor="let user of user">
+                <button type="button" class="btn btn-info" (click)="update(user)"  data-target="#exampleModal">
+                    Güncelle
+                </button>
+                &nbsp;
+                <button type="button" class="btn btn-danger" data-toggle="modal"  data-target="#exampleModal">
+                    Sil
+                </button>
+                
+                <!--MODAL-->
+                <div class="modal" tabindex="-1" role="dialog" id="exampleModal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Üyelik Silme</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>{{user.kullaniciAdi}} {{user.kullaniciSoyadi}}, üyeliğiniz silinecektir!</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button routerLink="/food/" type="button" class="btn btn-primary" data-dismiss="modal" (click)="delete()">Sil</button>
+                                &nbsp;
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Vazgeç</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

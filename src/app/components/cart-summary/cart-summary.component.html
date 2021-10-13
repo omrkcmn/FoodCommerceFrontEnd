@@ -1,0 +1,20 @@
+
+
+<li *ngIf="cartItems.length > 0" class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <img src="https://i.hizliresim.com/34ja4ip.png" class="align-baseline" style="width: 30px;">
+      Sepet
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item" *ngFor="let cartItem of cartItems">
+        <div routerLink="/food/getFoodsByFoodId/{{cartItem.yemekID}}">
+          <div class="cart_item_image"><img width="90" height="90" src="https://localhost:5001/{{cartItem.yemekResim}}" alt=""></div>
+          <b>{{cartItem.yemekAdi}} </b>
+          <br/>
+          {{cartItem.fiyat}} ₺
+        </div>
+        </a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#" routerLink="/user/cart/{{authService.userId}}">Sepete Git</a>
+    </div>
+  </li>

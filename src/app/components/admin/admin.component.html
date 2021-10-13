@@ -1,0 +1,90 @@
+
+    
+  <div class="col-md-12">
+      <div class="card">
+          <div class="card-header">
+              <h5 class="title">Kullanıcı Bilgileri</h5>
+          </div>
+          <div class="car-body">
+              <form [formGroup]="AdminForm" *ngFor="let rest of rests">
+                  <div class="mb-3">
+                      <div class="form-group">
+                           <input type="hidden" id="id" formControlName="id" 
+                                  class="form-control" [(ngModel)]="rest.id" />
+                      </div>
+                  </div>
+                  
+                  <div class="mb-3">
+                      <label for="kullaniciAdi">Restoran Adı</label>
+                      <div class="form-group">
+                           <input type="text" id="restoranAdi" formControlName="restoranAdi" 
+                                  class="form-control" [(ngModel)]="rest.restoranAdi" />
+                      </div>
+                  </div>
+                  <div class="mb-3">
+                      <label for="kullaniciSoyadi">Adres</label>
+                      <div class="form-group">
+                          <input type="text" id="restoranAdresi" formControlName="restoranAdresi" 
+                          class="form-control" [(ngModel)]="rest.restoranAdresi" />
+                      </div>
+                  </div>
+                  <div class="mb-3">
+                      <label for="il">İl</label>
+                      <div class="form-group">
+                          <input type="text" id="il" formControlName="il" class="form-control"
+                          [(ngModel)]="rest.il" />
+                      </div>
+                  </div>
+
+                  <div class="mb-3">
+                      <label for="ilce">İlçe</label>
+                      <div class="form-group">
+                          <input type="text" id="ilce" formControlName="ilce" class="form-control"
+                          [(ngModel)]="rest.ilce" />
+                      </div>
+                  </div>
+                  
+                  <div class="mb-3">
+                      <label for="telefon">Mahalle</label>
+                      <div class="form-group">
+                          <input type="text" id="mahalle" formControlName="mahalle" class="form-control"
+                          [(ngModel)]="rest.mahalle" />
+                      </div>
+                  </div>
+              </form>
+          </div>
+
+          
+          <div class="card-footer" *ngFor="let rest of rests">
+              <button type="button" class="btn btn-info" (click)="update(rest)" data-target="#exampleModal">
+                  Güncelle
+              </button>
+              &nbsp;
+              <button type="button" class="btn btn-danger" data-toggle="modal"  data-target="#exampleModal">
+                  Sil
+              </button>
+              
+              <!--MODAL-->
+              <div class="modal" tabindex="-1" role="dialog" id="exampleModal">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title">Üyelik Silme</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                              <p></p>
+                          </div>
+                          <div class="modal-footer">
+                              <button routerLink="/food/" type="button" class="btn btn-primary" data-dismiss="modal">Sil</button>
+                              &nbsp;
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Vazgeç</button>
+                          </div>
+                      </div>
+                </div>
+            </div>
+          </div>
+      </div>
+  </div>

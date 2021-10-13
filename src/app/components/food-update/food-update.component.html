@@ -1,0 +1,52 @@
+<div class="content">
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Yemek Ekle</h5>
+            </div>
+            <div class="car-body">
+                <form [formGroup]="foodUpdateForm">
+                    <div class="mb-3">
+                        <label for="foodName">Yemek Kodu</label>
+                        <div class="form-group">
+                            <input type="number" id="ID" formControlName="ID" class="form-control"
+                            [(ngModel)]="ID" readonly />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="foodName">Yemek Adı</label>
+                        <div class="form-group">
+                            <input type="text" id="yemekAdi" formControlName="yemekAdi" class="form-control"
+                            [(ngModel)]="yemekAdi" />
+                        </div>
+                    </div>
+                    <div class="mb-3"> <label for="restName">Açıklama</label>
+                        <div class="form-group"><input type="text" id="aciklama" formControlName="aciklama"
+                                class="form-control"autocomplete="off"  [(ngModel)]="aciklama" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="restCode">Restoran Kodu</label>
+                        <div class="form-group"><input type="number" id="restoranID" formControlName="restoranID"
+                                class="form-control" [(ngModel)]="restoranID" readonly/>
+                        </div>
+                    </div>
+                    <div class="mb-3"><label for="foodPrice">Fiyat</label>
+                        <div class="form-group">
+                            <input type="number" id="fiyat" formControlName="fiyat"
+                                class="form-control" [(ngModel)]="fiyat" >
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+                    
+
+                
+            <div class="card-footer">
+                    <button class="btn btn-fill btn-primary" (click)="update()">Güncelle</button>
+            </div>
+        </div>
+    </div>
+</div>

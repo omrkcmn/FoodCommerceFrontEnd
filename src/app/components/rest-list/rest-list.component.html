@@ -1,0 +1,9 @@
+<div class="list-group" id="list-tab" role="tablist">
+    <ul class="list-group">
+      <li class="list-group-item active">Restoranlar</li>
+    </ul>
+    <a [(ngModel)]="filterRest" id="filterRest" 
+            *ngFor="let rest of rests | restList:filterRest" 
+            class="list-group-item list-group-item-action" 
+            id="list-home-list" data-toggle="list" routerLink="/rest/restdetail/{{rest.id}}" role="tab" aria-controls="home">{{rest.restoranAdi}}</a>
+  </div>

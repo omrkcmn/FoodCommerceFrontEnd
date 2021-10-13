@@ -1,0 +1,75 @@
+<!--<div class="container my-5">
+    <button class="btn btn-success" routerLink="/food/add">Yemek Ekle</button>
+    <div class="d-md-flex d-none justify-content-md-between justify-content-sm-center align-content-center border-bottom border-2 my-2 bg-dark text-light p-3 rounded-3">
+        <div class="col-2 text-sm-center text-md-start align-self-center">
+            <h1 class="h5 fw-bold">Yemek No</h1>
+        </div>
+        <div class="col-2 align-self-center">
+            <h1 class="h5 fw-bold">Yemek Adı</h1>
+        </div>
+        <div class="col-3 align-self-center">
+            <h1 class="h5 fw-bold">Açıklama</h1>
+        </div>
+        <div class="col-2 align-self-center">
+            <h1 class="h5 fw-bold">Fiyat</h1>
+        </div>
+        <div class="col-3 align-self-center">
+            <h1 class="h5 fw-bold">İşlem</h1>
+        </div>
+    </div>
+    <div class="d-md-flex d-sm-block justify-content-md-between justify-content-sm-center text-center border-bottom border-2 my-2 bg-light p-2 rounded-3" 
+            *ngFor="let food of foodsByDetails">
+        <div class="col-md-2 text-sm-center text-md-start align-self-center my-2">
+            <h1 class="h6">{{food.yemekID}}</h1>
+        </div>
+        <div class="col-md-2 text-sm-center text-md-start align-self-center my-2">
+            <h1 class="h6">{{food.yemekAdi}}</h1>
+        </div>
+        <div class="col-md-3 text-sm-center text-md-start align-self-center my-2">
+            <h1 class="h6">{{food.aciklama}}</h1>
+        </div><div class="col-md-3 text-sm-center text-md-start align-self-center my-2">
+            <h1 class="h6">{{food.fiyat}}₺</h1>
+        </div>
+        <div class="col-md-4 text-sm-center text-md-start align-self-center my-2">
+            <button class="btn btn-primary" routerLink="/img/add/{{food.yemekID}}">Resim Ekle</button>
+            &nbsp;
+            <button class="btn btn-primary" routerLink="/admin/food/update/{{food.yemekID}}">Güncelle</button>
+            &nbsp;
+            <button class="btn btn-danger" routerLink="/admin/food/delete/{{food.yemekID}}">Sil</button>
+        </div>
+        
+</div>-->
+
+<div class="container my-5">
+    <button class="btn btn-success" routerLink="/food/add">Yemek Ekle</button>
+
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Yemek No</th>
+            <th scope="col">Yemek Adı</th>
+            <th scope="col">Açıklama</th>
+            <th scope="col">Fiyat</th>
+            <th scope="col">İşlem</th>
+    
+    
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let food of foodsByDetails">
+            <td>{{food.yemekID}}</td> 
+            <td>{{food.yemekAdi}}</td>
+            <td>{{food.aciklama}}</td>
+            <td>{{food.fiyat}}₺</td>
+            <td>
+                <button class="btn btn-primary" routerLink="/img/add/{{food.yemekID}}">Resim Ekle</button>
+                &nbsp;
+                <button class="btn btn-primary" routerLink="/admin/food/update/{{food.yemekID}}">Güncelle</button>
+                &nbsp;
+                <button class="btn btn-danger" routerLink="/admin/food/delete/{{food.yemekID}}">Sil</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+</div>
