@@ -5,13 +5,14 @@ import { FoodImage } from '../models/foodImage';
 import { ListResponseModel } from '../models/listResponseModel';
 import { ResponseModel } from '../models/responseModel';
 import { SingleResponseModel } from '../models/singleResponseModel';
+import { BaseUrl } from './baseurl';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FoodImageService {
 
-  apiUrl = "https://localhost:5001/api/";
+  apiUrl = new BaseUrl().apiUrl
   
   constructor(private httpClient:HttpClient) { }
   getImages(){

@@ -10,12 +10,13 @@ import { LocalStorageService } from './local-storage.service';
 import { UserService } from './user.service';
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { RegisterModel } from '../models/register';
+import { BaseUrl } from './baseurl';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  apiUrl = 'https://localhost:5001/api/auth/';
+  apiUrl = new BaseUrl().apiUrl
   
   userName: string;
   public userId: number;  

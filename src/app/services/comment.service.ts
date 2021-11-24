@@ -4,12 +4,13 @@ import { Observable } from 'rxjs';
 import { Comment } from '../models/comment';
 import { ListResponseModel } from '../models/listResponseModel';
 import { ResponseModel } from '../models/responseModel';
+import { BaseUrl } from './baseurl';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommentService {
-  apiUrl = "https://localhost:5001/api/";
+  apiUrl = new BaseUrl().apiUrl
 
   constructor(private httpClient:HttpClient) { }
 

@@ -11,13 +11,14 @@ import { HttpClient } from '@angular/common/http';
 import { CartModel } from '../models/cartModel';
 import { ResponseModel } from '../models/responseModel';
 import { ToastrService } from 'ngx-toastr';
+import { BaseUrl } from './baseurl';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  apiUrl = "https://localhost:5001/api/";
+  apiUrl = new BaseUrl().apiUrl
 
   constructor(private httpClient:HttpClient,
     private toastr:ToastrService) { }

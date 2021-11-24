@@ -5,13 +5,14 @@ import { ListResponseModel } from '../models/listResponseModel';
 import { Restourant } from '../models/restourant';
 import { Food } from '../models/food';
 import { ResponseModel } from '../models/responseModel';
+import { BaseUrl } from './baseurl';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestourantService {
-  apiUrl = "https://localhost:5001/api/";
+  apiUrl = new BaseUrl().apiUrl
 
   constructor(private httpClient: HttpClient) { }
 

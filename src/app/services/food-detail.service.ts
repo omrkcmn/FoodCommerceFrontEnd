@@ -4,13 +4,14 @@ import { Observable } from 'rxjs';
 import { Food } from '../models/food';
 import { FoodDetail } from '../models/foodDetail';
 import { ListResponseModel } from '../models/listResponseModel';
+import { BaseUrl } from './baseurl';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FoodDetailService {
 
-  apiUrl = "https://localhost:5001/api/";
+  apiUrl = new BaseUrl().apiUrl
   
   constructor(private httpClient:HttpClient) { }
 
